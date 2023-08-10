@@ -19,3 +19,14 @@ def addTodo(request):
     # Redirect the broswer to main page
     return HttpResponseRedirect('/todo/')
 
+def deleteTodo(request,todo_id):
+    # get todo all_items id
+    item_to_delete = TodoItem.objects.get(id=todo_id)
+
+    # delete item
+    item_to_delete.delete()
+
+    # Redirect the broswer to main page
+    return HttpResponseRedirect('/todo/')
+
+

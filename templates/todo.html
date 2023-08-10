@@ -3,7 +3,11 @@
   <li>To do item A</li>
   <li>To do item B</li>
 </ul>-->
-
+<form action="/addTodo/" method="post">
+  {% csrf_token %}
+  <input type="text" name="content" />
+  <input type="submit" value="Add" />
+</form>
 <ul>
   {% for todo_item in all_items %}
   <li>{{todo_item.content}}</li>
